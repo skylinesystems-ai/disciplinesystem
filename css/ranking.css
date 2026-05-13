@@ -1,0 +1,93 @@
+.ranking-page{
+    min-height:100vh;
+
+    padding:40px;
+
+    background:
+            radial-gradient(circle at top,
+            rgba(59,130,246,0.15),
+            transparent 35%
+            ),
+            #050816;
+}
+
+.ranking-list{
+    display:flex;
+    flex-direction:column;
+
+    gap:22px;
+}
+
+.ranking-card{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:28px;
+
+    border-radius:28px;
+
+    background:
+            rgba(255,255,255,0.03);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    transition:0.3s ease;
+}
+
+.ranking-card:hover{
+    transform:translateX(8px);
+
+    border-color:
+            rgba(124,58,237,0.35);
+}
+
+.top-player{
+    background:
+            linear-gradient(
+                    135deg,
+                    rgba(245,158,11,0.15),
+                    rgba(124,58,237,0.15)
+            );
+
+    border:
+            1px solid rgba(245,158,11,0.25);
+
+    box-shadow:
+            0 0 40px rgba(245,158,11,0.12);
+}
+
+.rank-position{
+    width:72px;
+    height:72px;
+
+    border-radius:22px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+            rgba(255,255,255,0.05);
+
+    font-family:'Orbitron';
+    font-size:22px;
+    font-weight:900;
+}
+
+.player-info{
+    flex:1;
+
+    margin-left:24px;
+}
+
+.player-info h2{
+    margin-bottom:8px;
+}
+
+.xp-total{
+    font-size:22px;
+    font-weight:800;
+
+    color:var(--gold);
+}

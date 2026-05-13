@@ -1,1 +1,697 @@
+/* =========================================
+   RESET
+========================================= */
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter', sans-serif;
+    background:#050816;
+    color:#ffffff;
+    overflow-x:hidden;
+}
+
+/* =========================================
+   ROOT VARIABLES
+========================================= */
+
+:root{
+
+    --bg-primary:#050816;
+    --bg-secondary:#0f172a;
+    --bg-card:#111827;
+
+    --border-color:rgba(255,255,255,0.08);
+
+    --text-primary:#ffffff;
+    --text-secondary:#94a3b8;
+
+    --purple:#7c3aed;
+    --blue:#3b82f6;
+    --cyan:#06b6d4;
+    --gold:#f59e0b;
+
+    --success:#22c55e;
+    --danger:#ef4444;
+
+    --glow-purple:0 0 30px rgba(124,58,237,0.45);
+    --glow-blue:0 0 30px rgba(59,130,246,0.45);
+
+    --radius-lg:24px;
+    --radius-md:18px;
+    --radius-sm:12px;
+
+    --transition:0.3s ease;
+
+}
+
+/* =========================================
+   TYPOGRAPHY
+========================================= */
+
+h1,h2,h3,h4{
+    font-family:'Orbitron', sans-serif;
+    letter-spacing:1px;
+}
+
+p{
+    color:var(--text-secondary);
+    line-height:1.6;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.primary-button{
+    border:none;
+    outline:none;
+    cursor:pointer;
+
+    background:linear-gradient(
+            135deg,
+            var(--purple),
+            var(--blue)
+    );
+
+    color:#fff;
+
+    padding:16px 28px;
+
+    border-radius:18px;
+
+    font-weight:700;
+    letter-spacing:1px;
+
+    transition:var(--transition);
+
+    box-shadow:var(--glow-purple);
+}
+
+.primary-button:hover{
+    transform:translateY(-4px);
+}
+
+.secondary-button{
+    border:1px solid rgba(255,255,255,0.1);
+
+    background:rgba(255,255,255,0.03);
+
+    color:#fff;
+
+    padding:14px 24px;
+
+    border-radius:16px;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+}
+
+.secondary-button:hover{
+    background:rgba(255,255,255,0.08);
+}
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.page-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:40px;
+}
+
+.page-header span{
+    color:var(--cyan);
+    font-size:14px;
+    letter-spacing:2px;
+}
+
+.page-header h1{
+    margin-top:10px;
+    font-size:42px;
+}
+
+/* =========================================
+   CARDS
+========================================= */
+
+.card{
+    background:rgba(255,255,255,0.03);
+
+    border:1px solid var(--border-color);
+
+    backdrop-filter:blur(14px);
+
+    border-radius:var(--radius-lg);
+
+    padding:24px;
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#0f172a;
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--purple);
+    border-radius:999px;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes pulseGlow{
+
+    0%{
+        box-shadow:
+                0 0 0 rgba(124,58,237,0.4);
+    }
+
+    50%{
+        box-shadow:
+                0 0 40px rgba(124,58,237,0.8);
+    }
+
+    100%{
+        box-shadow:
+                0 0 0 rgba(124,58,237,0.4);
+    }
+
+}
+
+@keyframes floating{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes levelUpAnimation{
+
+    0%{
+        transform:scale(0.5);
+        opacity:0;
+    }
+
+    50%{
+        transform:scale(1.1);
+        opacity:1;
+    }
+
+    100%{
+        transform:scale(1);
+        opacity:1;
+    }
+
+}
+
+/* =========================================
+   LEVEL UP POPUP
+========================================= */
+
+.level-up-popup{
+
+    position:fixed;
+
+    top:50%;
+    left:50%;
+
+    transform:
+            translate(-50%, -50%);
+
+    width:400px;
+
+    z-index:9999;
+
+    background:
+            linear-gradient(
+                    135deg,
+                    rgba(124,58,237,0.95),
+                    rgba(59,130,246,0.95)
+            );
+
+    padding:50px;
+
+    border-radius:30px;
+
+    text-align:center;
+
+    animation:
+            levelUpAnimation 0.5s ease;
+
+    box-shadow:
+            0 0 80px rgba(124,58,237,0.6);
+}
+
+.level-up-content span{
+
+    letter-spacing:4px;
+
+    color:#cbd5e1;
+
+    font-size:14px;
+}
+
+.level-up-content h1{
+
+    margin-top:18px;
+
+    font-size:48px;
+
+    color:#fff;
+}
+
+/* =========================================
+   ACHIEVEMENT POPUP
+========================================= */
+
+.achievement-popup{
+
+    position:fixed;
+
+    right:30px;
+    bottom:30px;
+
+    width:320px;
+
+    background:
+            rgba(15,23,42,0.95);
+
+    border:
+            1px solid rgba(245,158,11,0.3);
+
+    border-radius:24px;
+
+    padding:24px;
+
+    z-index:9999;
+
+    animation:
+            fadeIn 0.5s ease;
+}
+
+.achievement-popup-content span{
+
+    color:var(--gold);
+
+    font-size:12px;
+
+    letter-spacing:3px;
+}
+
+.achievement-popup-content h2{
+
+    margin-top:12px;
+}
+
+/* =========================================
+   MISSION POPUP
+========================================= */
+
+.mission-popup{
+
+    position:fixed;
+
+    top:40px;
+    right:40px;
+
+    width:320px;
+
+    background:
+            rgba(15,23,42,0.95);
+
+    border:
+            1px solid rgba(34,197,94,0.3);
+
+    border-radius:24px;
+
+    padding:24px;
+
+    z-index:9999;
+
+    animation:
+            fadeIn 0.4s ease;
+}
+
+/* =========================================
+   FLOATING EFFECT
+========================================= */
+
+.hero-level-card{
+    animation:
+            floating 6s ease-in-out infinite;
+}
+
+/* =========================================
+   CARD ENTRANCE
+========================================= */
+
+.stat-card,
+.mission-card,
+.achievement-card,
+.ranking-card{
+
+    animation:
+            fadeIn 0.5s ease;
+}
+
+/* =========================================
+   RESPONSIVE SYSTEM
+========================================= */
+
+.container{
+    width:100%;
+    max-width:1400px;
+    margin:0 auto;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media(max-width:1024px){
+
+    .dashboard{
+        padding:24px;
+    }
+
+    .hero-level-card{
+        flex-direction:column;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr;
+    }
+
+    .missions-grid{
+        grid-template-columns:1fr;
+    }
+
+    .profile-page{
+        grid-template-columns:1fr;
+    }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:768px){
+
+    body{
+        overflow-x:hidden;
+    }
+
+    /* SIDEBAR */
+
+    .sidebar{
+
+        position:fixed;
+
+        bottom:0;
+        left:0;
+
+        width:100%;
+        height:90px;
+
+        z-index:999;
+
+        display:flex;
+        justify-content:center;
+        align-items:center;
+
+        padding:0;
+
+        border-right:none;
+
+        border-top:
+                1px solid rgba(255,255,255,0.08);
+
+        background:
+                rgba(5,8,22,0.96);
+
+        backdrop-filter:blur(20px);
+    }
+
+    .sidebar-logo{
+        display:none;
+    }
+
+    .sidebar nav{
+
+        width:100%;
+
+        display:flex;
+        flex-direction:row;
+
+        justify-content:space-around;
+        align-items:center;
+
+        gap:0;
+    }
+
+    .sidebar nav a{
+
+        display:flex;
+        flex-direction:column;
+
+        align-items:center;
+        justify-content:center;
+
+        font-size:12px;
+
+        padding:10px;
+    }
+
+    /* DASHBOARD */
+
+    .dashboard{
+        padding:
+                24px 20px 120px;
+    }
+
+    .topbar{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+    }
+
+    .hero-level-card{
+
+        padding:28px;
+
+        border-radius:28px;
+    }
+
+    .hero-left h1{
+        font-size:64px;
+    }
+
+    .hero-right{
+        width:100%;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr;
+    }
+
+    .missions-grid{
+        grid-template-columns:1fr;
+    }
+
+    .mission-card{
+        padding:24px;
+    }
+
+    /* LOGIN */
+
+    .login-card{
+        padding:32px 24px;
+    }
+
+    .login-header h1{
+        font-size:34px;
+    }
+
+    /* ONBOARDING */
+
+    .onboarding-card{
+        padding:40px 24px;
+    }
+
+    .onboarding-card h1{
+        font-size:42px;
+    }
+
+    .onboarding-actions{
+        flex-direction:column;
+    }
+
+    /* PROFILE */
+
+    .profile-page{
+        grid-template-columns:1fr;
+
+        padding:
+                24px 20px 120px;
+    }
+
+    .profile-stats{
+        grid-template-columns:1fr;
+    }
+
+    /* RANKING */
+
+    .ranking-page{
+        padding:
+                24px 20px 120px;
+    }
+
+    .ranking-card{
+        flex-direction:column;
+        align-items:flex-start;
+
+        gap:18px;
+    }
+
+    .xp-total{
+        font-size:18px;
+    }
+
+    /* ACHIEVEMENTS */
+
+    .achievements-page{
+        padding:
+                24px 20px 120px;
+    }
+
+    .achievements-grid{
+        grid-template-columns:1fr;
+    }
+
+    /* POPUPS */
+
+    .level-up-popup{
+
+        width:90%;
+
+        padding:36px 24px;
+    }
+
+    .level-up-content h1{
+        font-size:38px;
+    }
+
+    .achievement-popup,
+    .mission-popup{
+
+        width:
+                calc(100% - 40px);
+
+        right:20px;
+    }
+
+}
+
+/* =========================================
+   LOADING SCREEN
+========================================= */
+
+.loading-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#050816;
+
+    z-index:99999;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    gap:30px;
+}
+
+.loader-core{
+
+    width:120px;
+    height:120px;
+
+    border-radius:50%;
+
+    border:
+            6px solid rgba(255,255,255,0.08);
+
+    border-top:
+            6px solid var(--purple);
+
+    animation:
+            loaderSpin 1s linear infinite;
+
+    box-shadow:
+            0 0 40px rgba(124,58,237,0.5);
+}
+
+.loading-screen h2{
+
+    font-size:18px;
+
+    letter-spacing:4px;
+
+    color:#cbd5e1;
+}
+
+@keyframes loaderSpin{
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}

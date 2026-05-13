@@ -1,0 +1,527 @@
+.app-layout{
+    display:flex;
+    min-height:100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+    width:260px;
+
+    background:#0b1120;
+
+    border-right:1px solid rgba(255,255,255,0.05);
+
+    padding:40px 24px;
+}
+
+.sidebar-logo{
+    width:70px;
+    height:70px;
+
+    border-radius:22px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:linear-gradient(
+            135deg,
+            var(--purple),
+            var(--blue)
+    );
+
+    font-family:'Orbitron';
+    font-size:24px;
+    font-weight:900;
+
+    margin-bottom:50px;
+
+    box-shadow:var(--glow-purple);
+}
+
+.sidebar nav{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.sidebar nav a{
+    text-decoration:none;
+
+    color:#94a3b8;
+
+    padding:16px 18px;
+
+    border-radius:16px;
+
+    transition:var(--transition);
+}
+
+.sidebar nav a:hover{
+    background:rgba(255,255,255,0.05);
+    color:#fff;
+}
+
+/* DASHBOARD */
+
+.dashboard{
+    flex:1;
+    padding:40px;
+}
+
+/* TOPBAR */
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:40px;
+}
+
+.user-info{
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+
+.avatar{
+    width:70px;
+    height:70px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+            135deg,
+            var(--purple),
+            var(--blue)
+    );
+
+    box-shadow:var(--glow-blue);
+}
+
+.user-info span{
+    color:var(--cyan);
+    font-size:13px;
+}
+
+.energy-pill{
+    padding:14px 24px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,0.04);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    color:var(--gold);
+
+    font-weight:700;
+}
+
+/* HERO CARD */
+
+.hero-level-card{
+    display:flex;
+    justify-content:space-between;
+    gap:40px;
+
+    background:
+            linear-gradient(
+                    135deg,
+                    rgba(124,58,237,0.25),
+                    rgba(59,130,246,0.15)
+            );
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:32px;
+
+    padding:40px;
+
+    margin-bottom:32px;
+}
+
+.hero-left h1{
+    font-size:82px;
+}
+
+.hero-left span{
+    color:var(--cyan);
+    font-size:14px;
+}
+
+.hero-right{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.xp-header{
+    display:flex;
+    justify-content:space-between;
+
+    margin-bottom:14px;
+}
+
+.xp-bar{
+    width:100%;
+    height:18px;
+
+    background:rgba(255,255,255,0.08);
+
+    border-radius:999px;
+
+    overflow:hidden;
+}
+
+.xp-fill{
+    width:78%;
+    height:100%;
+
+    background:linear-gradient(
+            90deg,
+            var(--purple),
+            var(--cyan)
+    );
+
+    box-shadow:var(--glow-purple);
+}
+
+/* STATS */
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+
+    margin-bottom:40px;
+}
+
+.stat-card{
+    background:rgba(255,255,255,0.03);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:24px;
+
+    padding:28px;
+}
+
+.stat-card span{
+    color:var(--cyan);
+    font-size:13px;
+}
+
+.stat-card h3{
+    margin-top:18px;
+    font-size:32px;
+}
+
+/* MISSIONS */
+
+.section-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:28px;
+}
+
+.missions-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:24px;
+}
+
+.mission-card{
+    background:rgba(255,255,255,0.03);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:28px;
+
+    padding:28px;
+}
+
+.mission-top{
+    display:flex;
+    justify-content:space-between;
+
+    margin-bottom:22px;
+}
+
+.difficulty{
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    font-size:12px;
+    font-weight:700;
+}
+
+.hard{
+    background:rgba(239,68,68,0.15);
+    color:#ef4444;
+}
+
+.medium{
+    background:rgba(245,158,11,0.15);
+    color:#f59e0b;
+}
+
+.easy{
+    background:rgba(34,197,94,0.15);
+    color:#22c55e;
+}
+
+.xp-tag{
+    color:var(--gold);
+    font-weight:700;
+}
+
+.mission-card h3{
+    margin-bottom:14px;
+}
+
+.mission-button{
+    width:100%;
+    margin-top:24px;
+
+    height:54px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+            135deg,
+            var(--purple),
+            var(--blue)
+    );
+
+    color:#fff;
+
+    font-weight:700;
+
+    cursor:pointer;
+}
+
+/* =========================================
+   MOBILE TOUCH FEEDBACK
+========================================= */
+
+@media(max-width:768px){
+
+    .mission-button,
+    .primary-button,
+    .secondary-button{
+
+        min-height:58px;
+
+        font-size:15px;
+    }
+
+    .mission-button:active,
+    .primary-button:active{
+
+        transform:scale(0.96);
+    }
+
+    .mission-card,
+    .stat-card,
+    .achievement-card{
+
+        transition:
+                transform 0.2s ease;
+    }
+
+}
+
+/* =========================================
+   RANK SYSTEM
+========================================= */
+
+.rank-system{
+    margin-bottom:40px;
+}
+
+.rank-card{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:
+            linear-gradient(
+                    145deg,
+                    rgba(245,158,11,0.12),
+                    rgba(124,58,237,0.08)
+            );
+
+    border:
+            1px solid rgba(245,158,11,0.18);
+
+    border-radius:32px;
+
+    padding:36px;
+
+    overflow:hidden;
+
+    position:relative;
+}
+
+.rank-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-100px;
+    right:-100px;
+
+    width:240px;
+    height:240px;
+
+    background:
+            rgba(245,158,11,0.18);
+
+    filter:blur(80px);
+}
+
+.rank-left span{
+
+    color:var(--gold);
+
+    letter-spacing:3px;
+
+    font-size:12px;
+}
+
+.rank-left h2{
+
+    margin:
+            16px 0 12px;
+
+    font-size:42px;
+}
+
+.rank-right{
+
+    position:relative;
+
+    z-index:2;
+}
+
+.rank-badge{
+
+    width:120px;
+    height:120px;
+
+    border-radius:30px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+            linear-gradient(
+                    135deg,
+                    #f59e0b,
+                    #facc15
+            );
+
+    color:#050816;
+
+    font-size:58px;
+    font-weight:900;
+
+    font-family:'Orbitron';
+
+    box-shadow:
+            0 0 50px rgba(245,158,11,0.45);
+
+    animation:
+            pulseGlow 3s infinite;
+}
+
+.player-title{
+
+    margin-top:10px;
+
+    color:var(--gold);
+
+    font-size:12px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+}
+
+/* =========================================
+   STREAK SYSTEM
+========================================= */
+
+.streak-section{
+    margin-bottom:40px;
+}
+
+.streak-card{
+
+    display:flex;
+    align-items:center;
+
+    gap:24px;
+
+    background:
+            linear-gradient(
+                    145deg,
+                    rgba(239,68,68,0.12),
+                    rgba(245,158,11,0.08)
+            );
+
+    border:
+            1px solid rgba(239,68,68,0.18);
+
+    border-radius:28px;
+
+    padding:28px;
+}
+
+.streak-flame{
+
+    width:90px;
+    height:90px;
+
+    border-radius:24px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:42px;
+
+    background:
+            rgba(255,255,255,0.05);
+
+    animation:
+            pulseGlow 2s infinite;
+}
+
+.streak-card span{
+
+    color:#f97316;
+
+    letter-spacing:3px;
+
+    font-size:12px;
+}
+
+.streak-card h2{
+
+    margin-top:10px;
+
+    font-size:42px;
+}

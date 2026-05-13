@@ -1,0 +1,42 @@
+.onboarding-page{
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:40px;
+}
+
+.onboarding-card{
+    width:100%;
+    max-width:720px;
+
+    background:rgba(255,255,255,0.03);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:32px;
+
+    padding:60px;
+
+    text-align:center;
+}
+
+.step-indicator{
+    color:var(--cyan);
+    letter-spacing:3px;
+}
+
+.onboarding-card h1{
+    font-size:58px;
+    margin:28px 0;
+}
+
+.onboarding-actions{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+
+    margin-top:40px;
+}
