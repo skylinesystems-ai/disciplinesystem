@@ -1,22 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Discipline System</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Discipline System</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link rel="stylesheet" href="css/global.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/global.css">
+
 </head>
 
 <body>
 
-<main class="splash-screen">
+  <!-- PARTICLES -->
+  <div class="particles"></div>
+
+  <!-- LOADING -->
+  <div class="loading-screen">
+
+    <div class="loader-core"></div>
+
+    <h2>
+      INITIALIZING SYSTEM
+    </h2>
+
+  </div>
+
+  <!-- SPLASH -->
+  <main class="splash-screen">
 
     <div class="background-glow"></div>
 
@@ -26,34 +46,32 @@
         DISCIPLINE PROTOCOL
       </span>
 
-        <h1>
-            DISCIPLINE
-            <br>
-            SYSTEM
-        </h1>
+      <h1>
+        DISCIPLINE
+        <br>
+        SYSTEM
+      </h1>
 
-        <p>
-            Transforme disciplina em evolução visual.
-        </p>
+      <p>
+        Transforme disciplina em evolução visual.
+      </p>
 
-        <button class="primary-button">
-            INICIAR JORNADA
-        </button>
+      <a
+        href="login.html"
+        class="primary-button start-button"
+      >
+        INICIAR JORNADA
+      </a>
 
     </section>
 
-</main>
+  </main>
 
-<script src="js/app.js"></script>
-<div class="loading-screen">
-
-    <div class="loader-core"></div>
-
-    <h2>
-        INITIALIZING SYSTEM
-    </h2>
-
-</div>
+  <!-- JS -->
+  <script src="js/app.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/audio-system.js"></script>
 
 </body>
+
 </html>
